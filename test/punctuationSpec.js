@@ -28,11 +28,19 @@ describe("Punctuation", () => {
     );
   });
 
-  it("should replace two dashes (--) by a dash (–)", () => {
+  it("should replace two dashes (--) by an en (–)", () => {
     const html =
       "<p>Pues aquí hay algo que no te va a gustar Laura, --dijo Carlos-- yo también voy al equipo de Juan.</p>";
     expect(punc(html)).to.equal(
       "<p>Pues aquí hay algo que no te va a gustar Laura, –dijo Carlos– yo también voy al equipo de Juan.</p>"
+    );
+  });
+
+  it("should replace three dashes (---) by an em dash (—)", () => {
+    const html =
+      "<p>Pues aquí hay algo que no te va a gustar Laura, ---dijo Carlos--- yo también voy al equipo de Juan.</p>";
+    expect(punc(html)).to.equal(
+      "<p>Pues aquí hay algo que no te va a gustar Laura, —dijo Carlos— yo también voy al equipo de Juan.</p>"
     );
   });
 
